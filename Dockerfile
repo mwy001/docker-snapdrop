@@ -21,7 +21,7 @@ RUN \
   echo "**** install snapdrop ****" && \
   mkdir -p /app/www && \
   if [ -z ${SNAPDROP_RELEASE} ]; then \
-    SNAPDROP_RELEASE=$(curl -sX GET "https://api.github.com/repos/mwy001/snapdrop/commits/master" \
+    SNAPDROP_RELEASE=$(curl -sX GET "https://api.github.com/repos/omniashare/snapdrop/commits/master" \
     | awk '/sha/{print $4;exit}' FS='[""]'); \
   fi && \
   curl -o \
