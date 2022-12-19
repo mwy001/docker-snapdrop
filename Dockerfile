@@ -21,12 +21,12 @@ RUN \
   echo "**** install snapdrop ****" && \
   mkdir -p /app/www && \
   if [ -z ${SNAPDROP_RELEASE} ]; then \
-    SNAPDROP_RELEASE=$(curl -sX GET "https://api.github.com/repos/omniashare/snapdrop/commits/master" \
+    SNAPDROP_RELEASE=$(curl -sX GET "https://api.github.com/repos/omniashare/neardrop/commits/master" \
     | awk '/sha/{print $4;exit}' FS='[""]'); \
   fi && \
   curl -o \
     /tmp/snapdrop.tar.gz -L \
-    "https://github.com/mwy001/snapdrop/archive/${SNAPDROP_RELEASE}.tar.gz" && \
+    "https://github.com/omniashare/neardrop/archive/${SNAPDROP_RELEASE}.tar.gz" && \
   tar xf \
     /tmp/snapdrop.tar.gz -C \
     /app/www/ --strip-components=1 && \
