@@ -13,6 +13,7 @@ ENV NODE_ENV="production"
 
 RUN \
   echo "**** install build packages ****" && \
+  sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
   apk add --no-cache \
     nodejs \
     npm && \
